@@ -1,4 +1,4 @@
-# LaTeX Vorlagen HKB MMM
+# LaTeX Templates HKB MMM
 
 
 ## Description
