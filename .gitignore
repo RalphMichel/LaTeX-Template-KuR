@@ -1,0 +1,11 @@
+# Ignore .DS_Store files
+
+.DS_Store
+
+
+# Ignore .texpadtmp folder
+
+/LaTeX__Vorlage_Modulkurzdoku/.texpadtmp
+/LaTeX_Vorlage_Doku_MMM_Deutsch/.texpadtmp
+/LaTeX_Vorlage_Praesentation/.texpadtmp
+/Latex_Vorlage_Textarbeit/.texpadtmp

@@ -1,0 +1,143 @@
+%Autor: Ralph Michel | Version 1.1 | 22.10.2021
+
+%----------------------------------------------------------------------------------------------------------------------------------------
+
+\documentclass[
+						a4paper,									 %Papierformat
+						9.5pt,											% Schriftgrösse
+]{article}																% Dokumentklasse Artikel
+
+\title{Titel} %TODO TITEL
+\author{Name Vorname} %TODO NAME VORNAME
+\date{Monat Jahr} %TODO MONAT JAHR
+
+
+%% Language and font encodings----------------------------------------------------------------------------------------------
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}				% Deutsche Interpunktion
+\usepackage[latin1]{inputenc}				% Unix/Linux - load extended character set 
+\usepackage[T1]{fontenc}					% Silbentrennung mit Wörter ä ö ü
+\usepackage{textcomp}						% Zusätzliche Symbole
+\usepackage{ae}									% Bessere Auflösung für T1-Schriften
+\usepackage{tocvsec2}						 % Kontrolle über Verzeichnistiefe
+
+
+%% Sets page size and margins-------------------------------------------------------------------------------------------------
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+%%Useful packages----------------------------------------------------------------------------------------------------------
+\usepackage{amsmath}											%Mathe Formeln
+\usepackage{graphicx}											 % Einbinden von Bilder
+\usepackage{float}							       					 % Exakte Positionierung von Bildern
+\usepackage[format=plain,                  % Captions ausrichten und formartieren 
+justification=justified,                			% linksbündig ausrichten 
+singlelinecheck=false,          					% Einzeilige Captions nicht zentrieren 
+font=footnotesize,                                 % Kleine Schriftart verwenden 
+%labelfont=bf,                                       % Abbildung fett drucken 
+position=top]                       					% Abstände für Überschriften verwenden 
+{caption}						     						% Bild- und Tabellenunterschriften
+
+\usepackage{booktabs}						  						 % Paket für schönere Tabellen
+\usepackage{fancyhdr}						  						% Einfache Anpassung für Kopf- und Fusszeile
+\usepackage{etoolbox}						  						 % Farbanpassung für Kopf- und Fusszeile
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{here}														% Exaktes Bilderpositionieren
+
+%% Zitier und Bibliographie Paket-------------------------------------------------------------------------------------------------
+\usepackage[backend=biber,style=apa,isbn=false,giveninits=true]{biblatex}
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
+\addbibresource{datenbanken/bibliography.bib}				%TODO BIBLIOGRAFIE Quelle
+%\urlstyle{rm}
+
+%%Pakete zum erleichterten platzieren von Objekten------------------------------------------------------------------------
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+%%Farben definieren----------------------------------------------------------------------------------------------------------------------------
+\RequirePackage{color}											% Color (not xcolor) 
+\definecolor{linkblue}{rgb}{0,0,0.8} 					  % Standard
+\definecolor{darkblue}{rgb}{0,0.08,0.45} 			% Dunkelblau
+\definecolor{bfhgrey}{rgb}{0.41,0.49,0.57}			% Bfh-Grau
+%\definecolor{linkcolor}{rgb}{0,0,0.8}  				% Blau fürr Web und CD-Version
+\definecolor{linkcolor}{rgb}{0,0,0}   						% Schwarz für die Druckversion
+
+
+%%Makeindex Paket------------------------------------------------------------------------------------------------------------------------------
+\usepackage{makeidx}			% Index erzeugen
+\makeindex								 % Index initialisieren
+
+
+\begin{document}
+\settocdepth{subsection}				% Verzeichnistiefe definieren
+\pagenumbering{arabic}				  % Stil der Seitenzahlnummerierung
+
+\maketitle
+
+%%Kopf- und Fusszeile---------------------------------------------------------------------------------------
+
+\makeatletter
+\patchcmd{\@fancyhead}{\rlap}{\color{bfhgrey}\rlap}{}{}			% Neue Farbe für Kopfzeile
+\patchcmd{\@fancyfoot}{\rlap}{\color{bfhgrey}\rlap}{}{}			 % Neue Farbe für Fusszeile
+\makeatother
+
+\fancyhf{}														 	 % Alle Felder löschen
+\fancypagestyle{plain}{	
+	\fancyfoot[LH]{\footnotesize Kopfzeile links}		% TODO KOPFZEILE LINKS	
+	\fancyfoot[RH]{\footnotesize Kopfzeile rechts}	  % TODO KOPFZEILE RECHTS
+	\fancyfoot[OL]{\footnotesize Fusszeile links }	  % TODO FUSSZEILE LINKS
+	\fancyfoot[OR]{\footnotesize \thepage}				% TODO Fusszeile rechts -> Seitenzahl
+}
+
+\renewcommand{\headrulewidth}{0.5pt}									  % LINIE KOPFZEILE
+\renewcommand{\footrulewidth}{0.5pt} 									 	% LINIE FUSSZEILE	
+
+\pagestyle{plain}																	% Layout mit Seitennummerierung
+
+
+%BEGINN DOKUMENT--x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
+
+
+	
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
+et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea 
+rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum 
+dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet 
+clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam 
+erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd 
+gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\\
+\\
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu 
+feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril 
+delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. \\
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
+commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie 
+consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
+blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+\\
+\\
+ä ö ü Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat 
+facer \autocites[S. 5]{baurSaechtlingKunststoffTaschenbuch2013}
+
+
+
+
+
+\cleardoublepage %neue Seite
+%Literaturverzeichnis--------------------------------------------------
+
+%\addcontentsline{toc}{section}{Literaturverzeichnis}
+\renewcommand{\bibname}{Literaturverzeichnis}
+\printbibliography
+
+%Abbildungsverzeichnis-----------------------------------------------
+%\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+%\listoffigures
+
+
+\end{document}

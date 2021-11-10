@@ -1,0 +1,74 @@
+%Autor: Ralph Michel | Version 1.1 | 22.10.2021
+
+%--------------------------------------------------------------
+
+\documentclass[handout]{beamer}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usetheme{Pittsburgh}
+\usepackage{graphicx}	
+\usepackage{here}												% Exaktes Bilderpositionieren
+\setbeamercolor{structure}{fg=black} 			% Punkte etc. Schwarz
+\setbeamercolor{normal text}{fg=black} 		% Normaler Text Schwarz
+\setbeamercolor{frametitle}{fg=black} 			% Titel Schwarz
+\usepackage{caption}
+\captionsetup[figure]{font=scriptsize} 				% Schriftgrösse der Bildunterschrift
+\setbeamertemplate{bibliography item}[text] 	% "Normales" Literaturverzeichnis
+\setbeamercolor{bibliography item}{fg=black} % Schriftfarbe Literaturverzeichnis Schwarz
+
+%-------------Zitier und Bibliographie Paket-----------------------
+
+\usepackage[backend=biber,style=apa,isbn=false,giveninits=true]{biblatex}
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
+\addbibresource{datenbanken/bibliography.bib}				% TODO BIBLIOGRAPHIE QUELLE
+\urlstyle{rm}
+
+
+
+\begin{document}
+	
+\begin{frame}
+	\frametitle{Titel der Präsentation}  
+	\vspace{1cm}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\linewidth]{bilder/testbild}
+		\caption*{Bildunterschrift (Quelle)}
+		\label{fig:testbild}
+	\end{figure}
+ \end{frame}
+
+\begin{frame}
+	\frametitle{Folientitel}
+	
+		\begin{itemize}
+		\item Aufzählung mit Punkt
+		\item Aufzählung mit Punkt
+		\item Aufzählung mit Punkt
+		\begin{itemize}
+			\item [--] Eingerückte Aufzählung mit Bindestrich
+			\item [--] Eingerückte Aufzählung mit Bindestrich
+		\end{itemize}	
+		\item Aufzählung mit Punkt
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	
+	\glqq\textit{Vestibulum finibus mauris ut risus fringilla, vel auctor eros ornare.}\grqq\ 
+	\autocites[S. 5]{baurSaechtlingKunststoffTaschenbuch2013}
+	
+	
+\end{frame}
+
+\begin{frame}
+\frametitle{Literaturverzeichnis}
+	\printbibliography
+\end{frame}
+
+
+
+
+	
+\end{document}

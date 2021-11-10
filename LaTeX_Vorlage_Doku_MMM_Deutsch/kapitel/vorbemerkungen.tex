@@ -1,0 +1,69 @@
+
+\chapter{Vorbemerkungen}
+\label{chap:vorbemerkungen}
+
+Abkürzungsverzeichnis, Bemerkungen zur Dokumentationsform oder allgemeine Informationen: z.B.: 
+
+\begin{itemize}
+	\item wer hat das Werk vorher und bis wohin bearbeitet
+	\item was waren/sind die Hauptprobleme, evtl. muss die Verpackung dokumentiert werden
+	\item Sichtweise (z.B. Gemälde vom Betrachter aus, Skulptur von der Skulptur aus, Architektur (Himmelsrichtungen)
+\end{itemize}
+
+
+\section{LaTeX Beispiele}
+
+Quisque tristique venenatis\footnote{Dies ist eine Fussnote} orci euismod eleifend. Curabitur vitae consequat diam. Fusce non nisi pellentesque dui venenatis laoreet (siehe Abbildung \ref{fig:testbild}) Phasellus eleifend lobortis lobortis. Aenean mattis at orci ut volutpat. Praesent volutpat magna nec sollicitudin malesuada. Praesent quis dignissim nisi. Cras ac vulputate urna. Phasellus magna arcu, sagittis non lacus eu, semper lacinia nisl. Etiam quis pellentesque tortor, eu tempor magna. Nunc a ex vitae diam blandit maximus at non leo. Etiam tempor rutrum dui. Proin vestibulum ex id velit suscipit pellentesque. Pellentesque dictum urna eu dolor mattis cursus. \autocites{adrianiJosephBeuysLeben1986a} \\
+\autocites[S. 56f.]{schmidtProfessionelleVideotechnikGrundlagen2013}
+
+
+\bigskip
+
+\begin{figure}[h]
+	\centering
+	\captionsetup{margin=2.4cm} % caption verschoben
+	\includegraphics[width=0.7
+	\linewidth]{bilder/identifikation/testbild}
+	\caption{Bildunterschrift (Fotograf)}
+	\label{fig:testbild}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{bilder/identifikation/testbild}
+		\caption{Bildunterschrift}
+		\label{fig:}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{bilder/identifikation/testbild}
+		\caption{Bidunterschrift test Bidunterschrift test Bidunterschrift test Bidunterschrift test }
+		\label{fig:}
+	\end{minipage}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

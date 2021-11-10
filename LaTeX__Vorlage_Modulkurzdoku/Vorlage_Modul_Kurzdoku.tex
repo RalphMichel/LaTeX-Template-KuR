@@ -1,0 +1,211 @@
+%Autor: Ralph Michel | Version 1.1 | 22.10.2021
+
+%-------------------------------------------------------------------------------
+
+\documentclass[
+						a4paper,					%Papierformat
+						9.5pt,						% Schriftgrösse
+	                    twocolumn				% Zwei Textkollonen
+]{article}											% Dokumentklasse Artikel
+
+
+
+\title{Titel} 										%TODO Titel definieren
+\author{Name Vorname} 				%TODO NAME VORNAME
+\date{xx. Monat Jahr} 					%TODO Datum %MONAT JAHR
+
+
+% --- Language and font encodings-------------------------------------------- 
+
+\usepackage[scaled]{helvet}				% Helvetica Schrift
+\renewcommand\familydefault{\sfdefault} 
+
+\usepackage[ngerman]{babel}				% Deutsche Interpunktion
+\usepackage[latin1]{inputenc}				% Unix/Linux - load extended character set 
+\usepackage[T1]{fontenc}					% Silbentrennung
+\usepackage{textcomp}						% Zusätzliche Symbole
+\usepackage{ae}									% Bessere Auflösungsung für T1-Schriften
+\usepackage{tocvsec2}						 	% Kontrolle über Verzeichnistiefe
+
+
+% --- Sets page size and margins------------------------------------------------
+
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+
+% --- Useful packages-------------------------------------------------------------
+
+\usepackage{amsmath}						% Mathe Formeln
+\usepackage{graphicx}							% Einbinden von Bilder
+\usepackage{float}							    % Exakte Positionierung von Bildern
+\usepackage[format=plain,                  % Captions ausrichten und formartieren 
+justification=justified,                			% linksbündig ausrichten 
+singlelinecheck=false,          					% Einzeilige Captions nicht zentrieren 
+font=footnotesize,                                 % Kleine Schriftart verwenden 
+%labelfont=bf,                                       % Abbildung fett drucken 
+position=top]                       					% Abstände für Überschriften verwenden 
+{caption}						     						% Bild- und Tabellenunterschriften
+
+\usepackage{booktabs}						% Paket für schönere Tabellen
+\usepackage{fancyhdr}						  	% Einfache Anpassung für Kopf- und Fusszeile
+\usepackage{etoolbox}						  	% Farbanpassung für Kopf- und Fusszeile
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+\usepackage{here}									% Exaktes Bilderpositionieren
+
+% --- Zitier und Bibliographie Paket-----------------------------------------------
+
+\usepackage[backend=biber,style=apa,isbn=false,giveninits=true,bibencoding=auto]{biblatex}
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
+\addbibresource{datenbanken/bibliography.bib}				%TODO BIBLIOGRAFIE Quelle
+%\urlstyle{rm}
+
+% --- Pakete zum erleichterten platzieren von Objekten----------------------------
+
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+% --- Farben definieren--------------------------------------------------------------
+
+\RequirePackage{color}											% Color (not xcolor) 
+\definecolor{linkblue}{rgb}{0,0,0.8} 					% Standard
+\definecolor{darkblue}{rgb}{0,0.08,0.45} 			% Dunkelblau
+\definecolor{bfhgrey}{rgb}{0.41,0.49,0.57}			% Bfh-Grau
+%\definecolor{linkcolor}{rgb}{0,0,0.8}  				% Blau für Web und CD-Version
+\definecolor{linkcolor}{rgb}{0,0,0}   					% Schwarz für die Druckversion
+
+
+% --- Makeindex Paket---------------------------------------------------------------
+
+\usepackage{makeidx}											% Index erzeugen
+\makeindex								 								% Index initialisieren
+
+% --- BEGIN DOCUMENT -----------------------------------------------------------
+
+\begin{document}
+\settocdepth{subsection}				% Verzeichnistiefe definieren
+\pagenumbering{arabic}				% Stil der Seitenzahlnummerierung
+
+\maketitle
+
+% --- Kopf- und Fusszeile-----------------------------------------------------------
+
+\makeatletter
+\patchcmd{\@fancyhead}{\rlap}{\color{bfhgrey}\rlap}{}{}			% Neue Farbe Kopfzeile
+\patchcmd{\@fancyfoot}{\rlap}{\color{bfhgrey}\rlap}{}{}			% Neue Farbe Fusszeile
+\makeatother
+
+\fancyhf{}														 	 							% Alle Felder löschen
+\fancypagestyle{plain}{	
+	\fancyfoot[LH]{\footnotesize Modulcode - Modulname}		%TODO KOPFZEILE LINKS	
+	\fancyfoot[RH]{\footnotesize Art des Dokuments}	  				%TODO KOPFZEILE RECHTS
+	\fancyfoot[OL]{\footnotesize Vorname Name}	  					% TODO Vorname Name 	FUSSZEILE LINKS
+	\fancyfoot[OR]{\footnotesize \thepage}									% Fusszeile rechts -> Seitenzahl
+}
+
+\renewcommand{\headrulewidth}{0.5pt}										% LINIE KOPFZEILE
+\renewcommand{\footrulewidth}{0.5pt} 									 	% LINIE FUSSZEILE	
+
+\pagestyle{plain}																			% Layout mit Seitennummerierung
+
+%XXXXXXXX ------- START ----------------------
+%XXXXXXXX ------- TEXT -----------------------
+
+			
+
+\section{Einleitung}
+
+Quisque tristique venenatis1 orci euismod eleifend. Curabitur vitae consequat diam. Fusce non nisi pellentesque dui venenatis laoreet. Phasellus eleifend lobortis lobortis. Aenean mattis at orci ut volutpat. Praesent volutpat magna nec sollicitudin malesuada. Praesent quis dignissim nisi. Cras ac vulputate urna. Phasellus magna arcu, sagittis non lacus eu, semper lacinia nisl. Etiam quis pellentesque tortor, eu tempor magna. ä ö ü \\
+\\
+Quisque tristique venenatis1 orci euismod eleifend \autocite[S. 5]{baurSaechtlingKunststoffTaschenbuch2013}
+
+\section{Fragestellung}
+
+Quisque tristique venenatis1 orci euismod eleifend. Curabitur vitae consequat diam. Fusce non nisi pellentesque dui venenatis laoreet.
+
+\begin{figure}[hbt]
+  \includegraphics[width=\linewidth]{bilder/testbild.jpg}
+  \caption{Dies ist eine Bildunterschrift}
+  \label{fig:testbild}
+\end{figure}
+
+
+
+
+
+\section{Methodik}
+
+Quisque tristique venenatis1 orci euismod eleifend. Curabitur vitae consequat diam. Fusce non nisi pellentesque dui venenatis laoreet. Phasellus eleifend lobortis lobortis. Aenean mattis at orci ut volutpat. Praesent volutpat magna nec sollicitudin malesuada. Praesent quis dignissim nisi. Cras ac vulputate urna.
+Quisque tristique venenatis1 orci euismod eleifend. Curabitur vitae consequat diam. Fusce non nisi pellentesque dui venenatis laoreet. Phasellus eleifend lobortis lobortis. Aenean mattis at orci ut volutpat. Praesent volutpat magna nec sollicitudin malesuada. Praesent quis dignissim nisi. Cras ac vulputate urna.
+
+Quisque tristique venenatis1 orci euismod eleifend. Curabitur vitae consequat diam. Fusce non nisi pellentesque dui venenatis laoreet. Phasellus eleifend lobortis lobortis. Aenean mattis at orci ut volutpat. Praesent volutpat magna nec sollicitudin malesuada. Praesent quis dignissim nisi. Cras ac vulputate urna.
+Quisque tristique venenatis1 orci euismod eleifend. Curabitur vitae consequat diam. Fusce non nisi pellentesque dui venenatis laoreet. Phasellus eleifend lobortis lobortis. Aenean mattis at orci ut volutpat. Praesent volutpat magna nec sollicitudin malesuada. Praesent quis dignissim nisi. Cras ac vulputate urna.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l|l|l|l}
+Wert 1 & Wert 2 & Wert 3 & Wert 4 & Wert 5  \\ 
+\hline
+a2     & b2     & c2     & d2     & e2      \\
+a3     & b3     & c3     & d3     & e3      \\
+a4     & b4     & c4     & d4     & e4     
+\end{tabular}
+\caption{Dies ist eine Testtabelle}
+\end{table}
+
+
+
+
+\section{Ergebnisse}
+
+
+
+
+\section{Fazit}
+
+	
+
+
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+\renewcommand{\bibname}{Literaturverzeichnis}
+\printbibliography
+
+
+\cleardoublepage %neue Seite
+
+
+
+%Abbildungsverzeichnis-----------------------------------------------
+
+\listoffigures
+
+%Tabellenverzeichnis-----------------------------------------------
+
+\listoftables
+
+
+\cleardoublepage %neue Seite
+
+\onecolumn % eine Kolonne
+\section{Anhang}
+
+\subsection{Abbildungen}
+
+
+
+
+\subsection{Datenblätter}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}\grid
