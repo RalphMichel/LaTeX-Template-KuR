@@ -3,6 +3,7 @@
 
 ## Description
 
+Templates for the Department of Conservation and Restoration of Modern Materials and Media at the Bern University of the Arts.
 
 
 ## Installation
@@ -20,7 +21,6 @@ Installing LaTeX for Linux:
   https://www.tug.org/texlive/
 
   
-
 LaTeX-Editors
 
 https://www.texpad.com/mac
@@ -30,13 +30,9 @@ https://www.xm1math.net/texmaker/index.html
 http://texstudio.sourceforge.net/
 
 
-
 LaTeX Online Editor 
 
 https://www.overleaf.com/
-
-
-
 
 
 
@@ -46,19 +42,9 @@ https://www.latex-tables.com/
 
 
 
-
-
-
-
-## Contributing
-
-
-## Authors and acknowledgment
-
-
 ## License
 
 CC BY-SA 4.0
 
-## Project status
+
 
