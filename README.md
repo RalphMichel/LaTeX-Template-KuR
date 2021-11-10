@@ -61,6 +61,7 @@ ralph.michel@students.bfh.ch
 
 ## License
 
+CC BY-SA 4.0
 
 ## Project status
 
