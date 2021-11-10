@@ -47,9 +47,6 @@ https://www.latex-tables.com/
 
 
 
-## Support
-ralph.michel@students.bfh.ch
-
 
 
 
