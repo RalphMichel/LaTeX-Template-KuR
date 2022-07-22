@@ -1,0 +1,471 @@
+% This is part of the document "Project documentation template".
+%https://intranet.bfh.ch/BFH/de/Dienste/Kommunikation/CI/Corporate-Design/Downloads/Office-Vorlagen/Seiten/default.aspx
+% Authors: brd3, kaa1
+% Angepasst auf KuR-Layout von Ralph Michel / 27.05.2019
+% Angepasst auf Masterarbeit-Vorlage von Elisa Carl / 2020
+% Angepasst auf neue KuR-Vorlage von Ralph Michel / 22.10.2021
+
+
+% Hauptdokument
+
+%========================================
+
+\documentclass[
+%draft,
+	a4paper, 				% Papierformat
+	9.5pt,					% Schriftgrösse
+%	twoside,				% Zwei-Seitig 
+%	openright,			 	% Neues Kaptiel auf rechter Seite
+	notitlepage,		 	% Keine Standard-Titelseite
+	parskip=half,	  		% set paragraph skip to half of a line
+	listof=entryprefix, 	% Präfix (Abb.)in den Verzeichnissen
+]{scrreprt}			    	% KOMA-script Klasse
+
+%------------------------------------------
+
+
+%\raggedbottom ----für report schon voreingestellt
+% Abstand auf neuer Seite reduzieren
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-\topskip}} 	
+	
+%\KOMA-options{cleardoublepage=plain}												
+% Kopf- und Fusszeile auf leerer Seite
+
+
+% ------------Hyperref Package (Links in PDF)-----------------------
+
+
+\usepackage[
+pdftex,ngerman,bookmarks,plainpages=false,pdfpagelabels,
+% No index backreference
+backref = {false},	
+% Color links in a PDF								
+colorlinks = {true}, 
+% no failures "same page(i)"              			   		
+hypertexnames = {true}, 
+% opens the bar on the left side             				
+bookmarksopen = {true}, 
+% depth of opened bookmarks              				
+bookmarksopenlevel = {0},  
+% TODO PDF Titel           				
+pdftitle = {PDF Titel einfügen},	  
+% TODO PDF Autor 									
+pdfauthor = {Vorname Nachname}, 
+% TODO PDF subject       					 			
+pdfsubject = {PDF Subject einfügen},  
+% Color of Links      			   	
+linkcolor = {linkcolor},  
+% Color of Cite-Links            				
+citecolor = {linkcolor},  
+% Color of URLs            				
+urlcolor = {linkcolor},               				
+]{hyperref}
+
+
+% ----------Verzeichnistiefe------------
+
+
+% Kontrolle über Verzeichnistiefe
+\usepackage{tocvsec2}
+	
+% Verzeichnistiefe im Inhaltsverzeichnis definieren
+\setcounter{tocdepth}{3}	
+					
+% Verzeichnistiefe im Text
+\setcounter{secnumdepth}{3}
+
+%Abstände im Inhaltsverzeichnis 				
+\RedeclareSectionCommand[
+tocbeforeskip = 7pt]{chapter} 
+				
+
+%--------Formatierung der Überschriften------------------------
+
+
+\addtokomafont{chapter}{\Large\normalfont} 
+\addtokomafont{section}{\normalsize} 
+\addtokomafont{subsection}{\normalsize\normalfont} 
+\addtokomafont{subsubsection}{\normalsize\normalfont} 
+\usepackage{microtype}
+
+
+% ------Abstände Üœberschriften definieren-----------------------
+
+
+\RedeclareSectionCommand[
+beforeskip=18bp,
+afterskip=6bp]{chapter}
+
+\RedeclareSectionCommand[
+beforeskip=12bp,
+afterskip=2bp]{section}
+
+\RedeclareSectionCommand[ 
+beforeskip=6bp,
+afterskip=0.3bp]{subsection}
+
+\RedeclareSectionCommand[ 
+beforeskip=6bp,
+afterskip=0.3bp]{subsubsection}
+
+
+%----------------Sprache--------------------------------------
+
+
+% Deutsche Interpunktion
+\usepackage[ngerman]{babel}	
+
+% Unix/Linux - load extended character set (ISO 8859-1)			   	
+\usepackage[latin1]{inputenc}		
+
+% Windows - load extended character set (ISO 8859-1)	   		
+%\usepackage[ansinew]{inputenc} 
+
+% Silbentrennung mit Wörter ä ö ü		
+\usepackage[T1]{fontenc}	
+
+% deutsche Anführungszeichen				  	
+\usepackage[autostyle=true,german=quotes]{csquotes}
+
+% Zusätzliche Symbole 
+\usepackage{textcomp}
+
+% Bessere Auflösung für T1-Schriften						 	
+\usepackage{ae}		
+
+% ??????							   	
+\usepackage[scaled=0.92]{helvet}  		
+
+% Sans Serif familiy ausgewählt
+\renewcommand*\familydefault{\sfdefault} 			   
+
+
+%-------Zusätze----
+
+
+% Einfache Anpassung für Kopf- und Fusszeile
+\usepackage{fancyhdr}						   	
+
+% Farbanpassung für Kopf- und Fusszeile
+\usepackage{etoolbox}	
+					   	
+% Einbinden von Bilder					   	
+\usepackage{graphicx}	
+
+% Exakte Positionierung von Bildern					    
+\usepackage{float}		
+
+% Captions ausrichten und formartieren
+% linksbündig ausrichten
+% Einzeilige Captions nicht zentrieren 
+% Kleine Schriftart verwenden 
+% Abbildung fett drucken (optional)
+% Abstände für Üœberschriften verwenden
+% Bild- und Tabellenunterschriften				    
+\usepackage[format=plain,                   
+justification=justified,                			 
+singlelinecheck=false,          					
+font=footnotesize,                                 
+%labelfont=bf,                                       
+position=top]                       					 
+{caption}						     						
+
+\usepackage{blindtext}
+
+% Fortlaufende Nummerierung
+\usepackage{chngcntr}	
+
+						
+\counterwithout{figure}{chapter} 
+\counterwithout{table}{chapter}
+\renewcaptionname{ngerman}{\figurename}{Abb.} 
+\renewcaptionname{ngerman}{\tablename}{Tab.}
+
+% Pefix Abb. im Verzeichnis
+\KOMAoption{listof}{entryprefix} 			
+
+% Paket fÜr schönere Tabellen
+\usepackage{booktabs}
+
+% Zeilenabstand						
+\usepackage{setspace} 						
+
+
+%-------------Mathe Pakete--------------------------------
+
+
+% various features to facilitate writing math formulas
+\usepackage{amsmath} 
+
+% enhanced version of latex's newtheorem                   	   	
+\usepackage{amsthm}   
+
+% set of miscellaneous TeX fonts that augment the standard CM                    	
+\usepackage{amsfonts}
+                      		
+% mathematical special characters
+\usepackage{amssymb}							
+\usepackage{exscale}
+
+
+%-------------Chemie Pakete-------------------
+
+
+\usepackage[version=4]{mhchem}
+\usepackage{chemfig}
+
+\newcommand\setpolymerdelim[2]{\def\delimleft{#1}\def\delimright{#2}} \def\makebraces[#1,#2]#3#4#5{%
+	\edef\delimhalfdim{\the\dimexpr(#1+#2)/2}% 
+	\edef\delimvshift{\the\dimexpr(#1-#2)/2}%
+	\chemmove{%
+		\node[at=(#4),yshift=(\delimvshift)]
+		{$\left\delimleft\vrule height\delimhalfdim depth\delimhalfdim width0pt\right.$};%
+		\node[at=(#5),yshift=(\delimvshift)]
+		{$\left.\vrule height\delimhalfdim depth\delimhalfdim width0pt\right\delimright_{\rlap{$\scriptstyle#3$}}$};}} 
+
+
+%-------------Zitier und Bibliographie Paket-----------------------
+
+
+\usepackage[backend=biber,style=authoryear,firstinits=true,maxcitenames=1,autocite=inline,isbn=false]{biblatex}
+
+% TODO Bibliografie exportieren
+\addbibresource{datenbanken/bibliography.bib}	
+
+% Abstand zwischen den Literaturangaben			
+\setlength{\bibitemsep}{1em}      								
+
+%\urlstyle{rm}
+
+
+%-------------Pakete zum erleichterten platzieren von Objekten-----------------
+	
+	
+% für command textblock, genaue Positionierung von Textabschnitten		
+\usepackage[absolute]{textpos} 			
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+% PDF Datei einfügen
+\usepackage{pdfpages} 	
+
+%Positionierung pdf damit im Textblock					
+\includepdfset{offset=0.7cm 0cm} 		
+
+
+%-------------Farben definieren-----------------------------------
+
+
+% Color (not xcolor)
+\RequirePackage{color}	
+
+% Standard										 
+\definecolor{linkblue}{rgb}{0,0,0.8} 
+
+% Dunkelblau					
+\definecolor{darkblue}{rgb}{0,0.08,0.45} 	
+
+% BFH Grau		
+\definecolor{bfhgrey}{rgb}{0.41,0.49,0.57}	
+
+% Blau für Web und CD-Version		
+%\definecolor{linkcolor}{rgb}{0,0,0.8} 
+
+% Schwarz für die Druckversion 				
+\definecolor{linkcolor}{rgb}{0,0,0}   					
+
+
+%-------------Seite definieren----------------------------------------
+
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=30mm,
+	right=20mm,
+	top=22mm,
+	%headheight=20mm,
+	%headsep=10mm,
+	textheight=260mm,
+	footskip=6mm
+}
+
+
+%-----------------Makeindex Paket---------------------------
+
+% Index erzeugen
+\usepackage{makeidx}
+
+% Index initialisieren				
+\makeindex								 	
+
+%\addtocontents{toc}{\vspace{-2ex}}
+%\usepackage{tocloft}
+%\cftbeforechapskip
+%\cftsetindents{chapter}{em}{1em}
+%\cftsetindents{section}{0em}{2em}
+%\cftsetindents{subsection}{0em}{2em}
+%\newtocstyle[KOMAlike]{compressed}{
+%\settocfeature[0]{entryvskip}{0.5em plus 1pt}%  % Die Stellschraube
+
+
+%================= Intro ============================
+
+
+% Start Dokument
+\begin{document}									
+
+% Stil der Seitenzahlnummerierung
+%\pagenumbering{roman}				  
+
+
+%----------------Vorspann-------------------------------------
+
+% TODO Titel der Arbeit definieren
+\input{vorspann/titel}	
+
+% TODO Versionsnummer nachtragen 
+\input{vorspann/version}			
+
+
+%----------------Kopf- und Fusszeile---------------------------
+
+
+\makeatletter
+
+% Neue Farbe für Kopfzeile
+\patchcmd{\@fancyhead}{\rlap}{\color{bfhgrey}\rlap}{}{}	
+
+% Neue Farbe für Fusszeile		
+\patchcmd{\@fancyfoot}{\rlap}{\color{bfhgrey}\rlap}{}{}			
+
+\makeatother
+
+\fancyhf{}																			
+
+% Alle Felder lölschen
+\fancypagestyle{plain}{																	
+% Neue Definition von plain style (?)
+% Fusszeile rechts -> Seitenzahl
+	\fancyfoot[OR,EL]{\color{bfhgrey}\footnotesize \thepage}	
+% TODO Fusszeile links definieren
+	\fancyfoot[OL,ER]{\color{bfhgrey}\footnotesize Titel der Doku | Vorname Name | MMM-Thesis | Version \versionnumber -  \versiondate}				
+} 
+
+% (?)
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.  #1}{}}	
+
+% Keine Linie Kopf		
+\renewcommand{\headrulewidth}{0pt}												
+
+% Keine Linie Fuss	
+\renewcommand{\footrulewidth}{0pt} 													
+
+
+%------------Titelseite und Abstract--------------------------------
+
+
+% Aktivieren fÃ¼r Titelseite ohne Bild
+%\include{vorspann/titelseite_ohne_bild}	
+
+% Titelseite mit Bild definieren - Aktivieren für Titelseite mit Bild			
+\include{vorspann/titelseite_mit_bild}		
+
+% Layout mit Seitennummerierung/nur fusszeile keine kopfzeile wird gedruckt		
+\pagestyle{plain}	
+
+% Aktivieren für Vorspann Versionen													
+\include{vorspann/version}		
+
+% (?)						   		
+%\cleardoubleemptypage	
+
+% Start bei Seitenzahl 1										
+%\setcounter{page}{1}
+
+% (?)											    
+%\cleardoublepage
+
+% (?)													
+%\phantomsection 
+
+% (?)													
+%\cleardoubleemptypage											
+
+
+%--------------Vorspann-------------------------------------
+
+
+% Stil der Seitenzahl
+\pagenumbering{arabic}	
+
+% Start bei Seitenzahl 1										
+\setcounter{page}{2}											      			
+
+% TODO Abstract  und Dank JA/NEIN									
+%\include{kapitel/Abstract}	
+
+% TODO Abkürzungsverzeichnis und Glossar JA/NEIN										
+%\include{kapitel/Abkuerzungsverzeichnis}	
+	
+% Inhaltsverzeichnis		
+\tableofcontents
+															
+%\cleardoublepage?
+
+
+%----------------Hauptteil---------------------------------------------
+
+
+\include{kapitel/vorbemerkungen}
+\include{kapitel/identifikation}
+\include{kapitel/werkbeschreibung}
+\include{kapitel/zustandsbeschreibung}
+\include{kapitel/schadensursachen}
+\include{kapitel/konzeptkonservierung}
+\include{kapitel/durchgefuehrtemassnahmen}
+\include{kapitel/verpackung}
+
+
+%----------------Anhang--------------------------------------
+
+
+\include{Kapitel/Verzeichnisse}
+\include{anhang/beispielanhang}
+\include{Kapitel/selbststaendig}
+
+
+%------------Literaturverzeichnis----------------------------------------
+
+%\cleardoublepage
+%\phantomsection 
+
+%\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+%\renewcommand{\refname}{Literaturverzeichnis}
+%\printbibliography 
+
+
+%------------Abbildungs- und Tabelleverzeichnis--------------------------------------
+
+%\cleardoublepage?
+%\phantomsection 
+%\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+%\listoffigures
+%cleardoublepage?
+
+%\phantomsection 
+%\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+%\listoftables
+
+
+%--------------Anhang----------------------------------------------------------------
+
+
+%\appendix
+%\settocdepth{subsection} ?
+
+
+% Ende des Dokuments
+\end{document}		
+
+			

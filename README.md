@@ -3,7 +3,7 @@
 
 ## Description
 
-Templates for the Department of Conservation and Restoration of Modern Materials and Media at the Bern University of the Arts.
+Templates for the Department of Conservation and Restoration of Modern Materials and Media at the Bern Academy of the Arts.
 
 
 ## Installation
@@ -18,9 +18,9 @@ https://www.tug.org/mactex/mactex-download.html
 
 Installing LaTeX for Linux:
 1. Installing the LaTeX distribution
-  https://www.tug.org/texlive/
+    https://www.tug.org/texlive/
 
-  
+
 LaTeX-Editors
 
 https://www.texpad.com/mac
@@ -38,7 +38,7 @@ https://www.overleaf.com/
 
 ## Useful links
 
-https://www.latex-tables.com/
+https://www.tablesgenerator.com/
 
 
 
