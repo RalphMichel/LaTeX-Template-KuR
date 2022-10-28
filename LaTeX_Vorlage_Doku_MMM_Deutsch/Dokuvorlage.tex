@@ -13,18 +13,18 @@
 \documentclass[
 %draft,
 	a4paper, 				% Papierformat
-	9.5pt,					% Schriftgrösse
+	9.5pt,					% Schriftgrï¿½sse
 %	twoside,				% Zwei-Seitig 
 %	openright,			 	% Neues Kaptiel auf rechter Seite
 	notitlepage,		 	% Keine Standard-Titelseite
 	parskip=half,	  		% set paragraph skip to half of a line
-	listof=entryprefix, 	% Präfix (Abb.)in den Verzeichnissen
+	listof=entryprefix, 	% Prï¿½fix (Abb.)in den Verzeichnissen
 ]{scrreprt}			    	% KOMA-script Klasse
 
 %------------------------------------------
 
 
-%\raggedbottom ----für report schon voreingestellt
+%\raggedbottom ----fï¿½r report schon voreingestellt
 % Abstand auf neuer Seite reduzieren
 \renewcommand*{\chapterheadstartvskip}{\vspace*{-\topskip}} 	
 	
@@ -48,11 +48,11 @@ bookmarksopen = {true},
 % depth of opened bookmarks              				
 bookmarksopenlevel = {0},  
 % TODO PDF Titel           				
-pdftitle = {PDF Titel einfügen},	  
+pdftitle = {PDF Titel einfï¿½gen},	  
 % TODO PDF Autor 									
 pdfauthor = {Vorname Nachname}, 
 % TODO PDF subject       					 			
-pdfsubject = {PDF Subject einfügen},  
+pdfsubject = {PDF Subject einfï¿½gen},  
 % Color of Links      			   	
 linkcolor = {linkcolor},  
 % Color of Cite-Links            				
@@ -65,7 +65,7 @@ urlcolor = {linkcolor},
 % ----------Verzeichnistiefe------------
 
 
-% Kontrolle über Verzeichnistiefe
+% Kontrolle ï¿½ber Verzeichnistiefe
 \usepackage{tocvsec2}
 	
 % Verzeichnistiefe im Inhaltsverzeichnis definieren
@@ -74,12 +74,12 @@ urlcolor = {linkcolor},
 % Verzeichnistiefe im Text
 \setcounter{secnumdepth}{3}
 
-%Abstände im Inhaltsverzeichnis 				
+%Abstï¿½nde im Inhaltsverzeichnis 				
 \RedeclareSectionCommand[
 tocbeforeskip = 7pt]{chapter} 
 				
 
-%--------Formatierung der Überschriften------------------------
+%--------Formatierung der ï¿½berschriften------------------------
 
 
 \addtokomafont{chapter}{\Large\normalfont} 
@@ -89,7 +89,7 @@ tocbeforeskip = 7pt]{chapter}
 \usepackage{microtype}
 
 
-% ------Abstände Üœberschriften definieren-----------------------
+% ------Abstï¿½nde Üœberschriften definieren-----------------------
 
 
 \RedeclareSectionCommand[
@@ -115,38 +115,38 @@ afterskip=0.3bp]{subsubsection}
 % Deutsche Interpunktion
 \usepackage[ngerman]{babel}	
 
-% Unix/Linux - load extended character set (ISO 8859-1)			   	
-\usepackage[latin1]{inputenc}		
+% Unix/Linux - load extended character set (utf8)			   	
+\usepackage[utf8]{inputenc}		
 
 % Windows - load extended character set (ISO 8859-1)	   		
 %\usepackage[ansinew]{inputenc} 
 
-% Silbentrennung mit Wörter ä ö ü		
+% Silbentrennung mit Wï¿½rter ï¿½ ï¿½ ï¿½		
 \usepackage[T1]{fontenc}	
 
-% deutsche Anführungszeichen				  	
+% deutsche Anfï¿½hrungszeichen				  	
 \usepackage[autostyle=true,german=quotes]{csquotes}
 
-% Zusätzliche Symbole 
+% Zusï¿½tzliche Symbole 
 \usepackage{textcomp}
 
-% Bessere Auflösung für T1-Schriften						 	
+% Bessere Auflï¿½sung fï¿½r T1-Schriften						 	
 \usepackage{ae}		
 
 % ??????							   	
 \usepackage[scaled=0.92]{helvet}  		
 
-% Sans Serif familiy ausgewählt
+% Sans Serif familiy ausgewï¿½hlt
 \renewcommand*\familydefault{\sfdefault} 			   
 
 
-%-------Zusätze----
+%-------Zusï¿½tze----
 
 
-% Einfache Anpassung für Kopf- und Fusszeile
+% Einfache Anpassung fï¿½r Kopf- und Fusszeile
 \usepackage{fancyhdr}						   	
 
-% Farbanpassung für Kopf- und Fusszeile
+% Farbanpassung fï¿½r Kopf- und Fusszeile
 \usepackage{etoolbox}	
 					   	
 % Einbinden von Bilder					   	
@@ -156,11 +156,11 @@ afterskip=0.3bp]{subsubsection}
 \usepackage{float}		
 
 % Captions ausrichten und formartieren
-% linksbündig ausrichten
+% linksbï¿½ndig ausrichten
 % Einzeilige Captions nicht zentrieren 
 % Kleine Schriftart verwenden 
 % Abbildung fett drucken (optional)
-% Abstände für Üœberschriften verwenden
+% Abstï¿½nde fï¿½r Üœberschriften verwenden
 % Bild- und Tabellenunterschriften				    
 \usepackage[format=plain,                   
 justification=justified,                			 
@@ -185,7 +185,7 @@ position=top]
 % Pefix Abb. im Verzeichnis
 \KOMAoption{listof}{entryprefix} 			
 
-% Paket fÜr schönere Tabellen
+% Paket fï¿½r schï¿½nere Tabellen
 \usepackage{booktabs}
 
 % Zeilenabstand						
@@ -242,12 +242,12 @@ position=top]
 %-------------Pakete zum erleichterten platzieren von Objekten-----------------
 	
 	
-% für command textblock, genaue Positionierung von Textabschnitten		
+% fï¿½r command textblock, genaue Positionierung von Textabschnitten		
 \usepackage[absolute]{textpos} 			
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
 
-% PDF Datei einfügen
+% PDF Datei einfï¿½gen
 \usepackage{pdfpages} 	
 
 %Positionierung pdf damit im Textblock					
@@ -269,10 +269,10 @@ position=top]
 % BFH Grau		
 \definecolor{bfhgrey}{rgb}{0.41,0.49,0.57}	
 
-% Blau für Web und CD-Version		
+% Blau fï¿½r Web und CD-Version		
 %\definecolor{linkcolor}{rgb}{0,0,0.8} 
 
-% Schwarz für die Druckversion 				
+% Schwarz fï¿½r die Druckversion 				
 \definecolor{linkcolor}{rgb}{0,0,0}   					
 
 
@@ -334,17 +334,17 @@ position=top]
 
 \makeatletter
 
-% Neue Farbe für Kopfzeile
+% Neue Farbe fï¿½r Kopfzeile
 \patchcmd{\@fancyhead}{\rlap}{\color{bfhgrey}\rlap}{}{}	
 
-% Neue Farbe für Fusszeile		
+% Neue Farbe fï¿½r Fusszeile		
 \patchcmd{\@fancyfoot}{\rlap}{\color{bfhgrey}\rlap}{}{}			
 
 \makeatother
 
 \fancyhf{}																			
 
-% Alle Felder lölschen
+% Alle Felder lï¿½lschen
 \fancypagestyle{plain}{																	
 % Neue Definition von plain style (?)
 % Fusszeile rechts -> Seitenzahl
@@ -369,13 +369,13 @@ position=top]
 % Aktivieren fÃ¼r Titelseite ohne Bild
 %\include{vorspann/titelseite_ohne_bild}	
 
-% Titelseite mit Bild definieren - Aktivieren für Titelseite mit Bild			
+% Titelseite mit Bild definieren - Aktivieren fï¿½r Titelseite mit Bild			
 \include{vorspann/titelseite_mit_bild}		
 
 % Layout mit Seitennummerierung/nur fusszeile keine kopfzeile wird gedruckt		
 \pagestyle{plain}	
 
-% Aktivieren für Vorspann Versionen													
+% Aktivieren fï¿½r Vorspann Versionen													
 \include{vorspann/version}		
 
 % (?)						   		
@@ -406,7 +406,7 @@ position=top]
 % TODO Abstract  und Dank JA/NEIN									
 %\include{kapitel/Abstract}	
 
-% TODO Abkürzungsverzeichnis und Glossar JA/NEIN										
+% TODO Abkï¿½rzungsverzeichnis und Glossar JA/NEIN										
 %\include{kapitel/Abkuerzungsverzeichnis}	
 	
 % Inhaltsverzeichnis		
